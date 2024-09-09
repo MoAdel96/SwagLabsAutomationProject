@@ -73,7 +73,7 @@ public class Utility{
     public static void selectingFromDropDown(WebDriver driver, By locator, String option) {
         new Select(findWebElement(driver, locator)).selectByVisibleText(option);
 
-// test pull
+
     }
 }
 
