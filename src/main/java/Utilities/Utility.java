@@ -66,7 +66,7 @@ public class Utility{
             // Attach the screenshot to Allure
             Allure.addAttachment(screenshotName, Files.newInputStream(Path.of(screenshotFile.getPath())));
         } catch (Exception e) {
-            e.printStackTrace();
+            LogsUtils.error(e.getMessage());
         }
     }
 
