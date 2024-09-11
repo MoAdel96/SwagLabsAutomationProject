@@ -30,4 +30,9 @@ public class P01_LoginPage {
         Utility.clickingOnElement(driver, loginButton);
         return new P02_LandingPage(driver);
     }
+
+    public Boolean assertLoginTC(String expectedValue) {
+        return driver.getCurrentUrl().equals(expectedValue);
+    }
+
 }
