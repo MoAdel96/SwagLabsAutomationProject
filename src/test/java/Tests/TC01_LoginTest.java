@@ -14,14 +14,14 @@ import static DriverFactory.DriverFactory.getDriver;
 import static DriverFactory.DriverFactory.setupDriver;
 
 public class TC01_LoginTest {
-    private String USERNAME = DataUtils.getJsonData("validLogin", "username");
-    private String PASSWORD = DataUtils.getJsonData("validLogin", "Password");
+    private final String USERNAME = DataUtils.getJsonData("validLogin", "username");
+    private final String PASSWORD = DataUtils.getJsonData("validLogin", "Password");
 
 
     @BeforeMethod
     public void setup() throws IOException {
         setupDriver(DataUtils.getPropertyValue("environment", "Browser"));
-        getDriver().get(DataUtils.getPropertyValue("environment", "https://www.saucedemo.com/"));
+        getDriver().get(DataUtils.getPropertyValue("environment", "BASE_URL"));
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
@@ -29,7 +29,8 @@ public class TC01_LoginTest {
     @Test
     public void validLoginTC() throws IOException {
         new P01_LoginPage(getDriver()).enterUsername(USERNAME).enterPassword(PASSWORD).clickOnLoginButton();
-        Assert.assertTrue(new P01_LoginPage(getDriver()).assertLoginTC(DataUtils.getPropertyValue("enviroment", "HOME_URL")));
+        Assert.assertTrue(new P01_LoginPage(getDriver()).assertLoginTC(DataUtils
+                .getPropertyValue("environment", "HOME_URL")));
 
     }
 
