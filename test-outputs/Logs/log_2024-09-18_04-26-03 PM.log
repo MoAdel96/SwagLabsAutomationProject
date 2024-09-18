@@ -1,0 +1,5 @@
+[INFO] 18-09-2024 16:26:03 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:26)] - Browser was opened
+[INFO] 18-09-2024 16:26:03 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:28)] -  browser is redirected to the url
+[INFO] 18-09-2024 16:26:07 [main] [Pages.P02_LandingPage.addAllProductsToCart(P02_LandingPage.java:25)] - number of all products6
+[INFO] 18-09-2024 16:26:07 [main] [Pages.P02_LandingPage.getNumberOfProductsOnCartIcon(P02_LandingPage.java:38)] - number of products on cart 6
+[INFO] 18-09-2024 16:26:07 [main] [Pages.P02_LandingPage.getNumberOfSelectedProducts(P02_LandingPage.java:52)] - selected products 6

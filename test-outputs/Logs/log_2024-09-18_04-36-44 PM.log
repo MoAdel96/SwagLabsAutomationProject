@@ -1,0 +1,7 @@
+[INFO] 18-09-2024 16:36:44 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:31)] - Browser was opened
+[INFO] 18-09-2024 16:36:45 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:33)] -  browser is redirected to the url
+[INFO] 18-09-2024 16:36:45 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case checkingNumberOfSelectedProductsTC started
+[INFO] 18-09-2024 16:36:47 [main] [Pages.P02_LandingPage.addAllProductsToCart(P02_LandingPage.java:25)] - number of all products6
+[INFO] 18-09-2024 16:36:47 [main] [Pages.P02_LandingPage.getNumberOfProductsOnCartIcon(P02_LandingPage.java:38)] - number of products on cart 6
+[INFO] 18-09-2024 16:36:47 [main] [Pages.P02_LandingPage.getNumberOfSelectedProducts(P02_LandingPage.java:52)] - selected products 6
+[INFO] 18-09-2024 16:36:47 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:20)] -  Test Case checkingNumberOfSelectedProductsTC Failed 
