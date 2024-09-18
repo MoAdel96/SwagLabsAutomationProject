@@ -21,7 +21,8 @@
         <fakerVersion>1.0.2</fakerVersion>
         <allureVersion>2.29.0</allureVersion>
         <commonIO>2.15.0</commonIO>
-        <aspectj.version>1.9.22</aspectj.version>
+        <aspectj.version>1.9.22.1</aspectj.version>
+        <shutterbugversion>1.6</shutterbugversion>
 
     </properties>
 
@@ -42,6 +43,14 @@
         </plugins>
     </build>
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/com.assertthat/selenium-shutterbug -->
+        <dependency>
+            <groupId>com.assertthat</groupId>
+            <artifactId>selenium-shutterbug</artifactId>
+            <version>${shutterbugversion}</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
         <dependency>

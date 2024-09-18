@@ -1,5 +1,8 @@
 package Tests;
 
+
+import Listeners.IInvokedMethodListenerClass;
+import Listeners.ITestResultListenerClass;
 import Pages.P01_LoginPage;
 import Pages.P02_LandingPage;
 import Utilities.DataUtils;
@@ -7,6 +10,7 @@ import Utilities.LogsUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -14,6 +18,7 @@ import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
 
+@Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC02_LandingTest {
 
     private final String USERNAME = DataUtils.getJsonData("validLogin", "username");

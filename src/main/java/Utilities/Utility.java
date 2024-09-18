@@ -1,5 +1,7 @@
 package Utilities;
 
+import com.assertthat.selenium_shutterbug.core.Capture;
+import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -14,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
-public class Utility{
+public class Utility {
 
     private static final String SCREENSHOTS_PATH = "test-outputs/Screenshots/";
 
@@ -36,6 +38,7 @@ public class Utility{
         return driver.findElement(locator).getText();
 
     }
+
     public static WebDriverWait generalWait(WebDriver driver) {
         return new WebDriverWait(driver, Duration.ofSeconds(5));
     }
@@ -73,6 +76,16 @@ public class Utility{
     public static void selectingFromDropDown(WebDriver driver, By locator, String option) {
         new Select(findWebElement(driver, locator)).selectByVisibleText(option);
 
+
+    }
+
+    public static void takeFullScreenShot(WebDriver driver, By locator) {
+        try {
+            Shutterbug.shootPage(driver, Capture.FULL_SCROLL).highlight(findWebElement(driver, locator)).save(SCREENSHOTS_PATH);
+        } catch (Exception e) {
+            LogsUtils.error(e.getMessage());
+
+        }
 
     }
 }

@@ -9,22 +9,26 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class P02_LandingPage {
+    private static List<WebElement> allProducts;
+    private static List<WebElement> SelectedProducts;
     private final By addToCartButtonForAllProducts = By.xpath("//button[@class]");
     private final By numberOfProductsOnCartIcon = By.className("shopping_cart_badge");
     private final WebDriver driver;
-    private static List<WebElement> allProducts;
-    private static List<WebElement> SelectedProducts;
     private final By numberOfSelectedProducts = By.xpath("//button[text()='REMOVE']");
 
     public P02_LandingPage(WebDriver driver) {
         this.driver = driver;
     }
 
+    public By getNumberOfSelectedProductsOnCartIcon() {
+        return numberOfProductsOnCartIcon;
+    }
+
     public P02_LandingPage addAllProductsToCart() {
         allProducts = driver.findElements(addToCartButtonForAllProducts);
-       LogsUtils.info("number of all products" + allProducts.size());
+        LogsUtils.info("number of all products" + allProducts.size());
         for (int i = 1; i <= allProducts.size(); i++) {
-            By addToCartButtonForAllProducts = By.xpath("//button[@class][" + i + "]");
+            By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + i + "]");
             Utility.clickingOnElement(driver, addToCartButtonForAllProducts);
 
         }
@@ -45,20 +49,18 @@ public class P02_LandingPage {
     }
 
 
+    public String getNumberOfSelectedProducts() {
 
-    public String getNumberOfSelectedProducts(){
+        try {
+            SelectedProducts = driver.findElements(numberOfSelectedProducts);
+            LogsUtils.info("selected products " + SelectedProducts.size());
 
-        try{
-        SelectedProducts=driver.findElements(numberOfSelectedProducts);
-        LogsUtils.info("selected products " + SelectedProducts.size());
-
-        return String.valueOf(SelectedProducts.size());}
-        catch (Exception e){
+            return String.valueOf(SelectedProducts.size());
+        } catch (Exception e) {
             LogsUtils.error(e.getMessage());
             return "0";
         }
     }
-
 
 
     public boolean comparingNumberOfSelectedProductsWithCart() {
