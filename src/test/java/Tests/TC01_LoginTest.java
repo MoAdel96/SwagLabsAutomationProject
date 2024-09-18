@@ -1,5 +1,7 @@
 package Tests;
 
+import Listeners.IInvokedMethodListenerClass;
+import Listeners.ITestResultListenerClass;
 import Pages.P01_LoginPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
@@ -8,8 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import Listeners.IInvokedMethodListenerClass;
-import Listeners.ITestResultListenerClass;
+
 import java.io.IOException;
 import java.time.Duration;
 
@@ -40,7 +41,7 @@ public class TC01_LoginTest {
 
     }
 
-
+    
     @AfterMethod
     public void quit() throws IOException {
         quitDriver();
