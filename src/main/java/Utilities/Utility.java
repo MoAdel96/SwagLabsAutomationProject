@@ -15,6 +15,9 @@ import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 public class Utility {
 
@@ -86,6 +89,23 @@ public class Utility {
             LogsUtils.error(e.getMessage());
 
         }
+
+    }
+
+
+    public static int generateRandomNumber(int upperBound) {
+        return new Random().nextInt(upperBound);
+
+    }
+
+    public static Set<Integer> generateUniqueNumber(int numberOfProductsNeeded, int totalNumberOfProducts) {
+        Set<Integer> generatedNumbers = new HashSet<>();
+        while (generatedNumbers.size() < numberOfProductsNeeded) {
+            int randomNumber = generateRandomNumber(totalNumberOfProducts);
+            generatedNumbers.add(randomNumber);
+        }
+        return generatedNumbers;
+
 
     }
 }

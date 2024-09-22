@@ -16,12 +16,12 @@ public class IInvokedMethodListenerClass implements IInvokedMethodListener {
     }
 
     public void afterInvocation(IInvokedMethod method, ITestResult testResult, ITestContext context) {
+        Utility.takeFullScreenShot(getDriver(), new P02_LandingPage(getDriver()).getNumberOfSelectedProductsOnCartIcon());
 
         if (testResult.getStatus() == ITestResult.FAILURE) {
             LogsUtils.info(" Test Case " + testResult.getName() + " Failed ");
 
             Utility.takeScreenShot(getDriver(), testResult.getName()); //TC-2024-12-05-8-17pm
-            Utility.takeFullScreenShot(getDriver(), new P02_LandingPage(getDriver()).getNumberOfSelectedProductsOnCartIcon());
         }
     }
 }

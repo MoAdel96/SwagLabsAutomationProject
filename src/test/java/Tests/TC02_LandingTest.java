@@ -42,6 +42,15 @@ public class TC02_LandingTest {
 
     }
 
+    @Test
+    public void addingRandomProductsToCartTC() {
+        new P01_LoginPage(getDriver()).enterUsername(USERNAME)
+                .enterPassword(PASSWORD).clickOnLoginButton().addRandomProducts(3, 6);
+        Assert
+                .assertTrue(new P02_LandingPage(getDriver()).comparingNumberOfSelectedProductsWithCart());
+
+    }
+
 
     @AfterMethod
     public void quit() throws IOException {

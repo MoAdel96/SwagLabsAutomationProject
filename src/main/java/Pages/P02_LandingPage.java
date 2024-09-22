@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.Set;
 
 public class P02_LandingPage {
     private static List<WebElement> allProducts;
@@ -60,6 +61,18 @@ public class P02_LandingPage {
             LogsUtils.error(e.getMessage());
             return "0";
         }
+    }
+
+    public P02_LandingPage addRandomProducts(int numberOfProductsNeeded, int totalNumberOfProducts) {
+        Set<Integer> randomNumbers = Utility.generateUniqueNumber(numberOfProductsNeeded, totalNumberOfProducts);
+
+        for (int random : randomNumbers) {
+            LogsUtils.info("randomNumber " + random);
+            By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + random + "]");
+            Utility.clickingOnElement(driver, addToCartButtonForAllProducts);
+
+        }
+        return this;
     }
 
 
