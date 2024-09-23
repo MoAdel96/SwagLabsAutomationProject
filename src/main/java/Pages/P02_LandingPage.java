@@ -5,6 +5,7 @@ import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 import java.util.Set;
@@ -16,6 +17,8 @@ public class P02_LandingPage {
     private final By numberOfProductsOnCartIcon = By.className("shopping_cart_badge");
     private final WebDriver driver;
     private final By numberOfSelectedProducts = By.xpath("//button[text()='REMOVE']");
+
+    private final By cartIcon = By.id("shopping_cart_container");
 
     public P02_LandingPage(WebDriver driver) {
         this.driver = driver;
@@ -80,5 +83,19 @@ public class P02_LandingPage {
         return getNumberOfProductsOnCartIcon().equals(getNumberOfSelectedProducts());
     }
 
+    public P03_CartPage clickOnCartIcon() {
+        Utility.clickingOnElement(driver, cartIcon);
+        return new P03_CartPage(driver);
+    }
 
+    public Boolean verifyCartPageURl(String expectedURl) {
+        try {
+            Utility.generalWait(driver).until(ExpectedConditions.urlToBe(expectedURl));
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
+    }
 }
+

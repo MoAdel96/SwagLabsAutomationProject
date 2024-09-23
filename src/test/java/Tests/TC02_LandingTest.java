@@ -51,6 +51,13 @@ public class TC02_LandingTest {
 
     }
 
+    @Test
+    public void clickOnCartIcon() throws IOException {
+        new P01_LoginPage(getDriver()).enterUsername(USERNAME).enterPassword(PASSWORD)
+                .clickOnLoginButton().clickOnCartIcon();
+        Assert.assertTrue(new P02_LandingPage(getDriver()).verifyCartPageURl(DataUtils.getPropertyValue("environment", "CART_URL")));
+    }
+
 
     @AfterMethod
     public void quit() throws IOException {
