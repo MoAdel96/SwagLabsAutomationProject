@@ -10,7 +10,8 @@ import java.util.List;
 
 public class P03_CartPage {
     private final WebDriver driver;
-    private final By pricesOfSelectedProductsLocator = By.xpath("//div[contains(@class, 'inventory_item')]//button[text()='REMOVE']/ancestor::div[contains(@class, 'inventory_item')]//div[@class='inventory_item_price']\n");
+    private final By pricesOfSelectedProductsLocator = By
+            .xpath("//button[.=\"REMOVE\"]//preceding-sibling::div[@class='inventory_item_price']");
     private float totalPrice = 0;
 
 
@@ -23,13 +24,15 @@ public class P03_CartPage {
             List<WebElement> pricesOfSelectedProducts = driver.findElements(pricesOfSelectedProductsLocator);
 
             for (int i = 1; i <= pricesOfSelectedProducts.size(); i++) {
-                By elements = By.xpath("//div[contains(@class, 'inventory_item')]//button[text()='REMOVE']/ancestor::div[contains(@class, 'inventory_item')]//div[@class='inventory_item_price']\n[" + i + "]");
+                By elements = By
+                        .xpath("(//button[.=\"REMOVE\"]//preceding-sibling::div[@class='inventory_item_price'])[" + i + "]");
                 String fullText = Utility.getText(driver, elements);
-                LogsUtils.info("Total Price " + totalPrice);
+
                 totalPrice += Float.parseFloat(fullText.replace("$", ""));
 
 
             }
+            LogsUtils.info("Total Price on cart " + totalPrice);
             return String.valueOf(totalPrice);
         } catch (Exception e) {
             LogsUtils.error(e.getMessage());

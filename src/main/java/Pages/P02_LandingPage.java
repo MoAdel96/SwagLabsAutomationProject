@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.Set;
 
 public class P02_LandingPage {
-    static float totalPrice = 0;
+    static float totalPrice = 0.0f;
     private static List<WebElement> allProducts;
     private static List<WebElement> SelectedProducts;
     private final By addToCartButtonForAllProducts = By.xpath("//button[@class]");
     private final By numberOfProductsOnCartIcon = By.className("shopping_cart_badge");
     private final WebDriver driver;
     private final By numberOfSelectedProducts = By.xpath("//button[text()='REMOVE']");
-    private final By pricesOfSelectedProductsLocator = By.xpath("//div[contains(@class, 'inventory_item')]//button[text()='REMOVE']/ancestor::div[contains(@class, 'inventory_item')]//div[@class='inventory_item_price']\n");
+    private final By pricesOfSelectedProductsLocator = By.xpath("//button[.=\"REMOVE\"]//preceding-sibling::div[@class='inventory_item_price']");
 
 
     private final By cartIcon = By.id("shopping_cart_container");
@@ -104,19 +104,24 @@ public class P02_LandingPage {
     public String getTotalPriceOfSelectedProducts() {
         try {
             List<WebElement> pricesOfSelectedProducts = driver.findElements(pricesOfSelectedProductsLocator);
+
             for (int i = 1; i <= pricesOfSelectedProducts.size(); i++) {
-                By elements = By.xpath("//div[contains(@class, 'inventory_item')]//button[text()='REMOVE']/ancestor::div[contains(@class, 'inventory_item')]//div[@class='inventory_item_price']\n[" + i + "]");
+                By elements = By
+                        .xpath("(//button[.=\"REMOVE\"]//preceding-sibling::div[@class='inventory_item_price'])[" + i + "]");
                 String fullText = Utility.getText(driver, elements);
-                LogsUtils.info("Total Price " + totalPrice);
+
                 totalPrice += Float.parseFloat(fullText.replace("$", ""));
 
 
             }
+            LogsUtils.info("Total Price on cart " + totalPrice);
             return String.valueOf(totalPrice);
         } catch (Exception e) {
             LogsUtils.error(e.getMessage());
             return "0";
+
         }
+
     }
 }
 

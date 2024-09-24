@@ -1,0 +1,18 @@
+[INFO] 24-09-2024 15:36:27 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:31)] - Browser was opened
+[INFO] 24-09-2024 15:36:28 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:33)] -  browser is redirected to the url
+[ERROR] 24-09-2024 15:36:39 [main] [Utilities.Utility.takeFullScreenShot(Utility.java:89)] - no such element: Unable to locate element: {"method":"css selector","selector":".shopping_cart_badge"}
+  (Session info: MicrosoftEdge=129.0.2792.52)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [c01a21dfa82ae41401e23549a3816664, findElement {value=shopping_cart_badge, using=class name}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 129.0.2792.52, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62382}, msedge: {msedgedriverVersion: 129.0.2792.52 (6462e8fc16ec..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62382/devtoo..., se:cdpVersion: 129.0.2792.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c01a21dfa82ae41401e23549a3816664
+[INFO] 24-09-2024 15:36:40 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case comparingPricesTC started
+[INFO] 24-09-2024 15:36:41 [main] [Pages.P02_LandingPage.addRandomProducts(P02_LandingPage.java:76)] - randomNumber 2
+[INFO] 24-09-2024 15:36:41 [main] [Pages.P02_LandingPage.addRandomProducts(P02_LandingPage.java:76)] - randomNumber 4
+[INFO] 24-09-2024 15:36:41 [main] [Pages.P02_LandingPage.getTotalPriceOfSelectedProducts(P02_LandingPage.java:117)] - Total Price on cart 59.980003
+[INFO] 24-09-2024 15:36:42 [main] [Pages.P03_CartPage.getTotalPrice(P03_CartPage.java:35)] - Total Price on cart 59.980003
+[INFO] 24-09-2024 15:36:43 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] -  Test Case comparingPricesTC Passed 
+[ERROR] 24-09-2024 15:36:44 [main] [Utilities.Utility.takeFullScreenShot(Utility.java:89)] - Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "js" is null
