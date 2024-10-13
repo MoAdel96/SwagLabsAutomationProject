@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
+import static Utilities.Utility.verifyURl;
 
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC02_LandingTest {
@@ -55,7 +56,7 @@ public class TC02_LandingTest {
     public void clickOnCartIcon() throws IOException {
         new P01_LoginPage(getDriver()).enterUsername(USERNAME).enterPassword(PASSWORD)
                 .clickOnLoginButton().clickOnCartIcon();
-        Assert.assertTrue(new P02_LandingPage(getDriver()).verifyCartPageURl(DataUtils.getPropertyValue("environment", "CART_URL")));
+        Assert.assertTrue(verifyURl(getDriver(), DataUtils.getPropertyValue("environment", "CART_URL")));
     }
 
 

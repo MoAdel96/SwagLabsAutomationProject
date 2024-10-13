@@ -108,6 +108,16 @@ public class Utility {
 
 
     }
+
+    public static Boolean verifyURl(WebDriver driver, String expectedURl) {
+        try {
+            Utility.generalWait(driver).until(ExpectedConditions.urlToBe(expectedURl));
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
+    }
 }
 
 
