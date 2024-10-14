@@ -1,0 +1,20 @@
+[INFO] 14-10-2024 15:45:02 [main] [Tests.TC05_OverviewTest.setup(TC05_OverviewTest.java:34)] - Browser was opened
+[INFO] 14-10-2024 15:45:03 [main] [Tests.TC05_OverviewTest.setup(TC05_OverviewTest.java:36)] -  browser is redirected to the url
+[ERROR] 14-10-2024 15:45:14 [main] [Utilities.Utility.takeFullScreenShot(Utility.java:89)] - no such element: Unable to locate element: {"method":"css selector","selector":".shopping_cart_badge"}
+  (Session info: MicrosoftEdge=129.0.2792.89)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [b021ee0c8ede30f144f3ad000f2c54c6, findElement {value=shopping_cart_badge, using=class name}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 129.0.2792.89, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:56206}, msedge: {msedgedriverVersion: 129.0.2792.89 (65986ec8d2a8..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56206/devtoo..., se:cdpVersion: 129.0.2792.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b021ee0c8ede30f144f3ad000f2c54c6
+[INFO] 14-10-2024 15:45:15 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case checkoutStepTwoTC started
+[INFO] 14-10-2024 15:45:16 [main] [Tests.TC05_OverviewTest.checkoutStepTwoTC(TC05_OverviewTest.java:46)] - login Successfully
+[INFO] 14-10-2024 15:45:16 [main] [Pages.P02_LandingPage.addRandomProducts(P02_LandingPage.java:76)] - randomNumber 2
+[INFO] 14-10-2024 15:45:16 [main] [Pages.P02_LandingPage.addRandomProducts(P02_LandingPage.java:76)] - randomNumber 4
+[INFO] 14-10-2024 15:45:17 [main] [Tests.TC05_OverviewTest.checkoutStepTwoTC(TC05_OverviewTest.java:50)] - products was added
+[INFO] 14-10-2024 15:45:18 [main] [Tests.TC05_OverviewTest.checkoutStepTwoTC(TC05_OverviewTest.java:57)] - the information was filled
+[INFO] 14-10-2024 15:45:18 [main] [Tests.TC05_OverviewTest.checkoutStepTwoTC(TC05_OverviewTest.java:58)] - FirstName is : fTest-2024-10-14-03-44-59PM LastName is :  Zipcode is : 14133
+[INFO] 14-10-2024 15:45:19 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:22)] -  Test Case checkoutStepTwoTC Failed 
+[ERROR] 14-10-2024 15:45:21 [main] [Utilities.Utility.takeFullScreenShot(Utility.java:89)] - Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "js" is null

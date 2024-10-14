@@ -17,15 +17,15 @@ public class P05_OverviewPage {
     }
 
     public Float getSubtotal() {
-        return Float.parseFloat(Utility.getText(driver, subTotal).replace("$", ""));
+        return Float.parseFloat(Utility.getText(driver, subTotal).replace("Item total: $", ""));
     }
 
     public Float getTax() {
-        return Float.parseFloat(Utility.getText(driver, Tax).replace("$", ""));
+        return Float.parseFloat(Utility.getText(driver, Tax).replace("Tax: $", ""));
     }
 
     public Float getTotal() {
-        return Float.parseFloat(Utility.getText(driver, total).replace("$", ""));
+        return Float.parseFloat(Utility.getText(driver, total).replace("Total: $", ""));
     }
 
     public String calculateTotalPrice() {
