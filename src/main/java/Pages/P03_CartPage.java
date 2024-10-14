@@ -45,7 +45,7 @@ public class P03_CartPage {
         return getTotalPrice().equals(price);
     }
 
-    public P04_CheckoutPage clickOnCheckoutButton(WebDriver driver) {
+    public P04_CheckoutPage clickOnCheckoutButton() {
         Utility.clickingOnElement(driver, checkOutButton);
         return new P04_CheckoutPage(driver);
     }
