@@ -14,10 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Utility {
 
@@ -117,6 +114,20 @@ public class Utility {
         }
 
         return true;
+    }
+
+    public static File getLatestFile(String folderPath) {
+        File folder = new File(folderPath);
+        File[] files = folder.listFiles();
+
+        // Check if the folder exists and is not empty
+        if (files == null || files.length == 0) {
+            return null;
+        }
+
+        // Sort the files by last modified date in descending order
+        Arrays.sort(files, Comparator.comparingLong(File::lastModified).reversed());
+        return files[0];
     }
 }
 
