@@ -129,6 +129,18 @@ public class Utility {
         Arrays.sort(files, Comparator.comparingLong(File::lastModified).reversed());
         return files[0];
     }
+
+    // Method to add cookies to the browser
+    public static void restoreSession(WebDriver driver, Set<Cookie> cookies) {
+        for (Cookie cookie : cookies) {
+            driver.manage().addCookie(cookie);
+        }
+    }
+
+    // Optional: Save cookies if you want to persist them and reuse later
+    public static Set<Cookie> getAllCookies(WebDriver driver) {
+        return driver.manage().getCookies();
+    }
 }
 
 

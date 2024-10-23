@@ -12,7 +12,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <seleniumVersion>4.24.0</seleniumVersion>
+        <seleniumVersion>4.25.0</seleniumVersion>
         <testNGVersion>7.10.2</testNGVersion>
         <slf4jVersion>2.0.16</slf4jVersion>
         <slf4jVersionAPI>2.0.16</slf4jVersionAPI>
