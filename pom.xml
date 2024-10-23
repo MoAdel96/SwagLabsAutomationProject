@@ -23,6 +23,13 @@
         <commonIO>2.15.0</commonIO>
         <aspectj.version>1.9.22.1</aspectj.version>
         <shutterbugversion>1.6</shutterbugversion>
+        <suite.cart>Test Runner/CartSuite.xml</suite.cart>
+        <suite.checkout>Test Runner/CheckoutSuite.xml</suite.checkout>
+        <suite.finishorder>Test Runner/FinishingOrderSuite.xml</suite.finishorder>
+        <suite.landing>Test Runner/LandingSuite.xml</suite.landing>
+        <suite.login>Test Runner/LoginSuite.xml</suite.login>
+        <suite.overview>Test Runner/OverviewSuite.xml</suite.overview>
+        <suite.regression>Test Runner/RegressionSuite.xml</suite.regression>
 
     </properties>
 
@@ -37,6 +44,11 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>
+                            ${suite.regression}
+                        </suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
 
             </plugin>
