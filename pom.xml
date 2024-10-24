@@ -21,7 +21,7 @@
         <fakerVersion>1.0.2</fakerVersion>
         <allureVersion>2.29.0</allureVersion>
         <commonIO>2.15.0</commonIO>
-        <aspectj.version>1.9.22.1</aspectj.version>
+
         <shutterbugversion>1.6</shutterbugversion>
         <suite.cart>Test Runner/CartSuite.xml</suite.cart>
         <suite.checkout>Test Runner/CheckoutSuite.xml</suite.checkout>
@@ -63,14 +63,6 @@
             <version>${shutterbugversion}</version>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
-            <scope>runtime</scope>
-        </dependency>
 
         <dependency>
             <groupId>commons-io</groupId>
