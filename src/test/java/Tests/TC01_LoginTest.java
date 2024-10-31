@@ -36,12 +36,14 @@ public class TC01_LoginTest {
     @Test
     public void validLoginTC() throws IOException {
         new P01_LoginPage(getDriver()).enterUsername(USERNAME).enterPassword(PASSWORD).clickOnLoginButton();
+
+
         Assert.assertTrue(new P01_LoginPage(getDriver()).assertLoginTC(DataUtils
                 .getPropertyValue("environment", "HOME_URL")));
 
     }
 
-    
+
     @AfterMethod
     public void quit() throws IOException {
         quitDriver();
