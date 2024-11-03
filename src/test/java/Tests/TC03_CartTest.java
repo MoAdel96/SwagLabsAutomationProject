@@ -59,6 +59,7 @@ public class TC03_CartTest {
         new P02_LandingPage(getDriver()).clickOnCartIcon();
         Assert.assertTrue(new P03_CartPage(getDriver()).comparingPrices(totalPrice));
 
+
     }
 
 
